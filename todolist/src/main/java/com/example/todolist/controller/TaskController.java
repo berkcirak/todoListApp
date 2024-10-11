@@ -1,6 +1,7 @@
 package com.example.todolist.controller;
 
 import com.example.todolist.entity.Task;
+import com.example.todolist.exception.IdNotFoundException;
 import com.example.todolist.service.TaskService;
 import com.example.todolist.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class TaskController {
         return taskService.getTasksByUser();
     }
     @DeleteMapping("/delete/{id}")
-    public void deleteTask(@PathVariable int id){
+    public void deleteTask(@PathVariable int id) throws IdNotFoundException {
         taskService.deleteTask(id);
     }
 }

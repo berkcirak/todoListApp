@@ -20,7 +20,7 @@ public class Task {
     private String title;
     @Lob
     private String description;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 

@@ -6,10 +6,12 @@
   <ul>
     <li *ngFor="let task of tasks">{{ task.title }}<br>
       {{ task.description }}
+      <button class="deleteButton" (click)="deleteTask(task.id)">Delete</button> <!-- Silme butonu -->
     </li>
   </ul>
   <div class="new-task">
     <input [(ngModel)]="newTaskTitle" placeholder="New Task Title">
+    <input [(ngModel)]="newTaskDescription" placeholder="New Task Description">
     <button (click)="addTask()">Add Task</button>
   </div>
 </div>

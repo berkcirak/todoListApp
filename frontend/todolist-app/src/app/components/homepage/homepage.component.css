@@ -37,6 +37,18 @@
     justify-content: flex-end;
     margin-bottom: 20px;
   }
+  button {
+    background-color: #554949;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #756b6b;
+  }
   
   .logout-button {
     background-color: #f44336;
@@ -50,5 +62,52 @@
   
   .logout-button:hover {
     background-color: #d32f2f;
+  }
+  /* Yeni task oluşturma kutusu */
+.new-task {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Input alanları */
+  .new-task input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Input odaklanma efekti */
+  .new-task input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Add Task butonu */
+  .new-task button {
+    width: 50%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Buton hover efekti */
+  .new-task button:hover {
+    background-color: #45a049;
   }
   

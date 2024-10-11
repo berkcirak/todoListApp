@@ -16,6 +16,7 @@ export class HomepageComponent {
   tasks: any[] = [];
   newTaskTitle: string = '';
   newTaskDescription: string = '';
+
   constructor(private taskService: TaskService, private authService: AuthService, private router: Router) {} // Router'ı inject ediyoruz
 
   ngOnInit() {
@@ -25,15 +26,22 @@ export class HomepageComponent {
   }
 
   addTask() {
-    if (this.newTaskTitle) {
-      this.taskService.createTask({ title: this.newTaskTitle }).subscribe((task) => {
+    if (this.newTaskTitle && this.newTaskDescription) {
+      this.taskService.createTask({ title: this.newTaskTitle,
+         description: this.newTaskDescription }).subscribe((task) => {
         this.tasks.push(task);
-        this.newTaskTitle = '';
+        this.newTaskTitle = ''
+        this.newTaskDescription= '';
+
       });
 
     }
   }
-
+  deleteTask(taskId: number) {
+    this.taskService.deleteTask(taskId).subscribe(() => {
+      this.tasks = this.tasks.filter(task => task.id !== taskId); // Task listesini güncelle
+    });
+  }
   logout() {
     this.authService.logout(); // AuthService üzerinden çıkış yapılıyor
     localStorage.removeItem('token'); // Token'ı temizliyoruz

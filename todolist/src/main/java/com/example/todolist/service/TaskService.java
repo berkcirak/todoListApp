@@ -2,6 +2,7 @@ package com.example.todolist.service;
 
 import com.example.todolist.entity.Task;
 import com.example.todolist.entity.User;
+import com.example.todolist.exception.IdNotFoundException;
 import com.example.todolist.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -32,8 +33,9 @@ public class TaskService {
 
     }
 
-    public void deleteTask(int id){
-        taskRepository.deleteById(id);
+    public void deleteTask(int taskId) throws IdNotFoundException {
+        Task task = taskRepository.findById(taskId).orElseThrow(()->new IdNotFoundException("Id not found task: "+taskId));
+        taskRepository.deleteById(taskId);
     }
 
 
