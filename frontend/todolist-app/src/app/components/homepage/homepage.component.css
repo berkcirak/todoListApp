@@ -37,6 +37,16 @@
     justify-content: flex-end;
     margin-bottom: 20px;
   }
+  .deleteButton{
+    background-color: #554949;
+    color: white;
+    width: 20%;
+    margin: auto;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   button {
     background-color: #554949;
     color: white;
